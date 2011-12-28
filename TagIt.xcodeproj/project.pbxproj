@@ -1,0 +1,440 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FAC0CEFA14AB14DA007BBA5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC0CEF914AB14DA007BBA5D /* UIKit.framework */; };
+		FAC0CEFC14AB14DA007BBA5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC0CEFB14AB14DA007BBA5D /* Foundation.framework */; };
+		FAC0CEFE14AB14DA007BBA5D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC0CEFD14AB14DA007BBA5D /* CoreGraphics.framework */; };
+		FAC0CF0414AB14DA007BBA5D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAC0CF0214AB14DA007BBA5D /* InfoPlist.strings */; };
+		FAC0CF0614AB14DA007BBA5D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC0CF0514AB14DA007BBA5D /* main.m */; };
+		FAC0CF0A14AB14DA007BBA5D /* TagItAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC0CF0914AB14DA007BBA5D /* TagItAppDelegate.m */; };
+		FAC0CF0D14AB14DA007BBA5D /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC0CF0B14AB14DA007BBA5D /* MainWindow.xib */; };
+		FAC0CF1514AB14DA007BBA5D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC0CF1414AB14DA007BBA5D /* SenTestingKit.framework */; };
+		FAC0CF1614AB14DA007BBA5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC0CEF914AB14DA007BBA5D /* UIKit.framework */; };
+		FAC0CF1714AB14DA007BBA5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC0CEFB14AB14DA007BBA5D /* Foundation.framework */; };
+		FAC0CF1814AB14DA007BBA5D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC0CEFD14AB14DA007BBA5D /* CoreGraphics.framework */; };
+		FAC0CF2014AB14DA007BBA5D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAC0CF1E14AB14DA007BBA5D /* InfoPlist.strings */; };
+		FAC0CF2214AB14DA007BBA5D /* TagItTests.h in Resources */ = {isa = PBXBuildFile; fileRef = FAC0CF2114AB14DA007BBA5D /* TagItTests.h */; };
+		FAC0CF2414AB14DA007BBA5D /* TagItTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC0CF2314AB14DA007BBA5D /* TagItTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FAC0CF1914AB14DA007BBA5D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAC0CEEC14AB14DA007BBA5D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAC0CEF414AB14DA007BBA5D;
+			remoteInfo = TagIt;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FAC0CEF514AB14DA007BBA5D /* TagIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TagIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAC0CEF914AB14DA007BBA5D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FAC0CEFB14AB14DA007BBA5D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FAC0CEFD14AB14DA007BBA5D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FAC0CF0114AB14DA007BBA5D /* TagIt-Info.plist */ = {isa = PBXFileReference; path = "TagIt-Info.plist"; sourceTree = "<group>"; };
+		FAC0CF0314AB14DA007BBA5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FAC0CF0514AB14DA007BBA5D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FAC0CF0714AB14DA007BBA5D /* TagIt-Prefix.pch */ = {isa = PBXFileReference; path = "TagIt-Prefix.pch"; sourceTree = "<group>"; };
+		FAC0CF0814AB14DA007BBA5D /* TagItAppDelegate.h */ = {isa = PBXFileReference; path = TagItAppDelegate.h; sourceTree = "<group>"; };
+		FAC0CF0914AB14DA007BBA5D /* TagItAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagItAppDelegate.m; sourceTree = "<group>"; };
+		FAC0CF0C14AB14DA007BBA5D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		FAC0CF1314AB14DA007BBA5D /* TagItTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TagItTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAC0CF1414AB14DA007BBA5D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		FAC0CF1D14AB14DA007BBA5D /* TagItTests-Info.plist */ = {isa = PBXFileReference; path = "TagItTests-Info.plist"; sourceTree = "<group>"; };
+		FAC0CF1F14AB14DA007BBA5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FAC0CF2114AB14DA007BBA5D /* TagItTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagItTests.h; sourceTree = "<group>"; };
+		FAC0CF2314AB14DA007BBA5D /* TagItTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagItTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FAC0CEF214AB14DA007BBA5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAC0CEFA14AB14DA007BBA5D /* UIKit.framework in Frameworks */,
+				FAC0CEFC14AB14DA007BBA5D /* Foundation.framework in Frameworks */,
+				FAC0CEFE14AB14DA007BBA5D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAC0CF0F14AB14DA007BBA5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAC0CF1514AB14DA007BBA5D /* SenTestingKit.framework in Frameworks */,
+				FAC0CF1614AB14DA007BBA5D /* UIKit.framework in Frameworks */,
+				FAC0CF1714AB14DA007BBA5D /* Foundation.framework in Frameworks */,
+				FAC0CF1814AB14DA007BBA5D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FAC0CEEA14AB14DA007BBA5D = {
+			isa = PBXGroup;
+			children = (
+				FAC0CEFF14AB14DA007BBA5D /* TagIt */,
+				FAC0CF1B14AB14DA007BBA5D /* TagItTests */,
+				FAC0CEF814AB14DA007BBA5D /* Frameworks */,
+				FAC0CEF614AB14DA007BBA5D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FAC0CEF614AB14DA007BBA5D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAC0CEF514AB14DA007BBA5D /* TagIt.app */,
+				FAC0CF1314AB14DA007BBA5D /* TagItTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FAC0CEF814AB14DA007BBA5D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAC0CEF914AB14DA007BBA5D /* UIKit.framework */,
+				FAC0CEFB14AB14DA007BBA5D /* Foundation.framework */,
+				FAC0CEFD14AB14DA007BBA5D /* CoreGraphics.framework */,
+				FAC0CF1414AB14DA007BBA5D /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FAC0CEFF14AB14DA007BBA5D /* TagIt */ = {
+			isa = PBXGroup;
+			children = (
+				FAC0CF0814AB14DA007BBA5D /* TagItAppDelegate.h */,
+				FAC0CF0914AB14DA007BBA5D /* TagItAppDelegate.m */,
+				FAC0CF0B14AB14DA007BBA5D /* MainWindow.xib */,
+				FAC0CF0014AB14DA007BBA5D /* Supporting Files */,
+			);
+			path = TagIt;
+			sourceTree = "<group>";
+		};
+		FAC0CF0014AB14DA007BBA5D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FAC0CF0114AB14DA007BBA5D /* TagIt-Info.plist */,
+				FAC0CF0214AB14DA007BBA5D /* InfoPlist.strings */,
+				FAC0CF0514AB14DA007BBA5D /* main.m */,
+				FAC0CF0714AB14DA007BBA5D /* TagIt-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FAC0CF1B14AB14DA007BBA5D /* TagItTests */ = {
+			isa = PBXGroup;
+			children = (
+				FAC0CF2114AB14DA007BBA5D /* TagItTests.h */,
+				FAC0CF2314AB14DA007BBA5D /* TagItTests.m */,
+				FAC0CF1C14AB14DA007BBA5D /* Supporting Files */,
+			);
+			path = TagItTests;
+			sourceTree = "<group>";
+		};
+		FAC0CF1C14AB14DA007BBA5D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FAC0CF1D14AB14DA007BBA5D /* TagItTests-Info.plist */,
+				FAC0CF1E14AB14DA007BBA5D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FAC0CEF414AB14DA007BBA5D /* TagIt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAC0CF2714AB14DA007BBA5D /* Build configuration list for PBXNativeTarget "TagIt" */;
+			buildPhases = (
+				FAC0CEF114AB14DA007BBA5D /* Sources */,
+				FAC0CEF214AB14DA007BBA5D /* Frameworks */,
+				FAC0CEF314AB14DA007BBA5D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TagIt;
+			productName = TagIt;
+			productReference = FAC0CEF514AB14DA007BBA5D /* TagIt.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FAC0CF1214AB14DA007BBA5D /* TagItTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAC0CF2A14AB14DA007BBA5D /* Build configuration list for PBXNativeTarget "TagItTests" */;
+			buildPhases = (
+				FAC0CF0E14AB14DA007BBA5D /* Sources */,
+				FAC0CF0F14AB14DA007BBA5D /* Frameworks */,
+				FAC0CF1014AB14DA007BBA5D /* Resources */,
+				FAC0CF1114AB14DA007BBA5D /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FAC0CF1A14AB14DA007BBA5D /* PBXTargetDependency */,
+			);
+			name = TagItTests;
+			productName = TagItTests;
+			productReference = FAC0CF1314AB14DA007BBA5D /* TagItTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FAC0CEEC14AB14DA007BBA5D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = UTAS;
+			};
+			buildConfigurationList = FAC0CEEF14AB14DA007BBA5D /* Build configuration list for PBXProject "TagIt" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FAC0CEEA14AB14DA007BBA5D;
+			productRefGroup = FAC0CEF614AB14DA007BBA5D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FAC0CEF414AB14DA007BBA5D /* TagIt */,
+				FAC0CF1214AB14DA007BBA5D /* TagItTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FAC0CEF314AB14DA007BBA5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAC0CF0414AB14DA007BBA5D /* InfoPlist.strings in Resources */,
+				FAC0CF0D14AB14DA007BBA5D /* MainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAC0CF1014AB14DA007BBA5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAC0CF2014AB14DA007BBA5D /* InfoPlist.strings in Resources */,
+				FAC0CF2214AB14DA007BBA5D /* TagItTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FAC0CF1114AB14DA007BBA5D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FAC0CEF114AB14DA007BBA5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAC0CF0614AB14DA007BBA5D /* main.m in Sources */,
+				FAC0CF0A14AB14DA007BBA5D /* TagItAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAC0CF0E14AB14DA007BBA5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAC0CF2414AB14DA007BBA5D /* TagItTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FAC0CF1A14AB14DA007BBA5D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAC0CEF414AB14DA007BBA5D /* TagIt */;
+			targetProxy = FAC0CF1914AB14DA007BBA5D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FAC0CF0214AB14DA007BBA5D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAC0CF0314AB14DA007BBA5D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FAC0CF0B14AB14DA007BBA5D /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAC0CF0C14AB14DA007BBA5D /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		FAC0CF1E14AB14DA007BBA5D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAC0CF1F14AB14DA007BBA5D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FAC0CF2514AB14DA007BBA5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FAC0CF2614AB14DA007BBA5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FAC0CF2814AB14DA007BBA5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TagIt/TagIt-Prefix.pch";
+				INFOPLIST_FILE = "TagIt/TagIt-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FAC0CF2914AB14DA007BBA5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TagIt/TagIt-Prefix.pch";
+				INFOPLIST_FILE = "TagIt/TagIt-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		FAC0CF2B14AB14DA007BBA5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TagIt.app/TagIt";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TagIt/TagIt-Prefix.pch";
+				INFOPLIST_FILE = "TagItTests/TagItTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		FAC0CF2C14AB14DA007BBA5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TagIt.app/TagIt";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TagIt/TagIt-Prefix.pch";
+				INFOPLIST_FILE = "TagItTests/TagItTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FAC0CEEF14AB14DA007BBA5D /* Build configuration list for PBXProject "TagIt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAC0CF2514AB14DA007BBA5D /* Debug */,
+				FAC0CF2614AB14DA007BBA5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAC0CF2714AB14DA007BBA5D /* Build configuration list for PBXNativeTarget "TagIt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAC0CF2814AB14DA007BBA5D /* Debug */,
+				FAC0CF2914AB14DA007BBA5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FAC0CF2A14AB14DA007BBA5D /* Build configuration list for PBXNativeTarget "TagItTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAC0CF2B14AB14DA007BBA5D /* Debug */,
+				FAC0CF2C14AB14DA007BBA5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FAC0CEEC14AB14DA007BBA5D /* Project object */;
+}

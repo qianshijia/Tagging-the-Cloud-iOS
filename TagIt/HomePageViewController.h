@@ -10,8 +10,9 @@
 #import "ZBarSDK.h"
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMessageComposeViewController.h>
+#import "TagProcessingController.h"
 
-@interface HomePageViewController : UIViewController <UIAlertViewDelegate, UINavigationControllerDelegate, ZBarReaderDelegate, MFMessageComposeViewControllerDelegate>
+@interface HomePageViewController : UIViewController <UIAlertViewDelegate, UINavigationControllerDelegate, ZBarReaderDelegate, MFMessageComposeViewControllerDelegate, TagProcessDelegate>
 {
     HomePageViewController *homeView;
     UINavigationController *navControllerWithoutLogin;

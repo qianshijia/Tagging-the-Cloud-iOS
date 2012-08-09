@@ -11,19 +11,20 @@
 @protocol TagProcessDelegate <NSObject>
 @optional
 -(void)finishProcessingWithError;
+-(void)processFail;
 @end
 
 @interface TagProcessingController : NSObject<NSXMLParserDelegate>
 {
     NSXMLParser *xmlParser;
     NSString *currentElement; 
-    BOOL done, timeout;
+    BOOL done;
     NSString *processType;
     id<TagProcessDelegate> delegate;
 }
 
 @property (nonatomic, retain) NSXMLParser *xmlParser;
-@property BOOL done, timeout;
+@property BOOL done;
 @property (nonatomic, retain) id<TagProcessDelegate> delegate;
 
 - (NSString *)processTag:(NSString *)tag;

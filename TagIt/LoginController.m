@@ -15,7 +15,8 @@
 @implementation LoginController
 
 @synthesize xmlParser;
-@synthesize timeout;
+@synthesize done;
+@synthesize delegate;
 
 - (id)init
 {
@@ -29,7 +30,7 @@
 
 - (void)login:(NSString *)userName password:(NSString *)passWord
 {
-    timeout = NO;
+    done = NO;
     UIDevice *device = [[UIDevice alloc] init];
     NSString *imei = [device uniqueIdentifier];
     [device release];
@@ -59,13 +60,15 @@
 
 - (void)requestFinished:(ASIHTTPRequest *)request
 {
-    
+    if([[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding].length > 200)
+    {
+        [delegate finishProcessingWithError];
+    }
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request
 {
-    NSLog(@"%@", @"login thread fail");
-    timeout = YES;
+    [delegate processFail];
 }
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
@@ -113,6 +116,7 @@
 -(void)parserDidEndDocument:(NSXMLParser *)parser
 {
     [DataAdapters setLogin:login];
+    done = YES;
 }
 
 -(void)dealloc

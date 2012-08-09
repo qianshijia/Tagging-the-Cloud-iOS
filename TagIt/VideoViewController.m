@@ -271,7 +271,7 @@
 - (void)finishProcessWithError
 {
     [processingIndicator dismissWithClickedButtonIndex:0 animated:YES];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Sorry we can't process this TAG. Please try again later." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Server error. Please try again later." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
     [alert release];
 }

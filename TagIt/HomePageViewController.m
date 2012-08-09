@@ -9,7 +9,6 @@
 #import "HomePageViewController.h"
 #import "SettingsViewController.h"
 #import "OptionsViewController.h"
-#import "TagProcessingController.h"
 #import "GPSPingServiceController.h"
 #import "DataAdapters.h"
 #import "TagitUtil.h"
@@ -438,17 +437,11 @@ static BOOL stopPing;
 {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     TagProcessingController *processor = [[TagProcessingController alloc] init];
+    processor.delegate = self;
     NSString *result = [processor processTag:tag];
-    while(!processor.done)
-    {
-        [NSThread sleepForTimeInterval:0.5];
-    }
     [NSThread sleepForTimeInterval:1];
-    if(processor.timeout)
-    {
-        [self performSelectorOnMainThread:@selector(processingThreadFail) withObject:nil waitUntilDone:NO];
-    }
-    else 
+    
+    if(processor.done)
     {
         [[NSUserDefaults standardUserDefaults] setObject:tag forKey:@"repeattag"];
         [self performSelectorOnMainThread:@selector(processingThreadStop:) withObject:result waitUntilDone:NO];
@@ -500,16 +493,6 @@ static BOOL stopPing;
         tagString = @"";
     }
 }
-
-- (void)processingThreadFail
-{
-    [processingAlert dismissWithClickedButtonIndex:0 animated:YES];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" 
-                                                    message:@"There is no processes attached with this tag!" 
-                                                   delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
-    [alert release];
-}
 //***************************************
 
 //*****Send SMS in App***********
@@ -556,6 +539,22 @@ static BOOL stopPing;
 	[controller dismissModalViewControllerAnimated:YES];
 }
 //*******************************
+
+- (void)finishProcessWithError
+{
+    [processingAlert dismissWithClickedButtonIndex:0 animated:YES];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Sorry we can't process this TAG. Please try again later." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    [alert release];
+}
+
+-(void)processFail
+{
+    [processingAlert dismissWithClickedButtonIndex:0 animated:YES];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Timeout. Please check your network connection." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    [alert release];
+}
 
 - (void)dealloc
 {

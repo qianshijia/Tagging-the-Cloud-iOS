@@ -15,7 +15,7 @@
 @implementation TagProcessingController
 
 @synthesize xmlParser;
-@synthesize done, timeout;
+@synthesize done;
 @synthesize delegate;
 
 - (id)init
@@ -31,7 +31,6 @@
 - (NSString *)processTag:(NSString *)tag
 {
     done = NO;
-    timeout = NO;
     UIDevice *device = [[UIDevice alloc] init];
     NSString *imei = [device uniqueIdentifier];
     [device release];
@@ -67,13 +66,15 @@
 
 - (void)requestFinished:(ASIHTTPRequest *)request
 {
+    if([[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding].length > 200)
+    {
+        [delegate finishProcessingWithError];
+    }
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request
 {
-    done = YES;
-    timeout = YES;
-    NSLog(@"request fail");
+    [delegate processFail];
 }
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
@@ -112,6 +113,7 @@
         [DataAdapters setQuestionDetial:qd];
         [qd release];
         processType = @"question";
+        done = YES;
     }
     //parse a question list if return xml contains a questionairelist
     else if([currentElement isEqualToString:@"questionairelist"])
@@ -127,6 +129,7 @@
             question.qTitle = [arrTemp3 objectAtIndex:0];
 
             [DataAdapters addQuestionToList:question];
+            done = YES;
             [question release];
             [arrTemp3 release];
         }
@@ -139,12 +142,9 @@
     {
         //******need to be finished********
         processType = @"messages";
+        done = YES;
     }
-    else
-    {
-        [delegate finishProcessingWithError];
-    }
-    done = YES;
+    
 }
 
 @end

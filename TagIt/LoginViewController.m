@@ -7,7 +7,6 @@
 //
 
 #import "LoginViewController.h"
-#import "LoginController.h"
 #import "DataAdapters.h"
 #import "SettingsSuperViewController.h"
 #import "OptionsViewController.h"
@@ -190,6 +189,7 @@
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     //[NSThread sleepForTimeInterval:1];
     LoginController *lc = [[LoginController alloc] init];
+    lc.delegate = self;
     if([[[NSUserDefaults standardUserDefaults] stringForKey:@"autologin"] isEqualToString:@"1"]
        || [from isEqualToString:@"btn"])
     {
@@ -201,13 +201,9 @@
     }
     
     [NSThread sleepForTimeInterval:0.5];
-    if(!lc.timeout)
+    if(lc.done)
     {
         [self performSelectorOnMainThread:@selector(loginThreadStop) withObject:nil waitUntilDone:NO];
-    }
-    else 
-    {
-        [self performSelectorOnMainThread:@selector(loginThreadFail) withObject:nil waitUntilDone:NO];
     }
     [lc release];
     [pool release];  
@@ -273,16 +269,6 @@
     }
 }
 
-- (void)loginThreadFail
-{
-    [loadAlert dismissWithClickedButtonIndex:0 animated:YES];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Error" 
-                                                    message:[[DataAdapters getLogin] retMessage] == nil ? @"Login timeout. Please check the network connection." : [[DataAdapters getLogin] retMessage]
-                                                   delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
-    [alert release];
-}
-
 - (IBAction)textFieldDoneEditing:(id)sender
 {
     [sender resignFirstResponder];
@@ -334,6 +320,22 @@
     {
         [self.scrollView setContentOffset:CGPointMake(0.0f, 0.0f) animated:YES];
     }
+}
+
+- (void)finishProcessWithError
+{
+    [loadAlert dismissWithClickedButtonIndex:0 animated:YES];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Server error. Please try again later." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    [alert release];
+}
+
+-(void)processFail
+{
+    [loadAlert dismissWithClickedButtonIndex:0 animated:YES];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Timeout. Please check your network connection." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    [alert release];
 }
 
 - (void)dealloc

@@ -182,7 +182,6 @@
             if(isPad)
             {
                 vViewController = [[VideoViewController alloc] initWithNibName:@"iPadVideoViewController" bundle:nil];
-                NSLog(@"video");
             }
             else 
             {

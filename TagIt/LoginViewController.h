@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "HomePageViewController.h"
+#import "LoginController.h"
 
 
-@interface LoginViewController : UIViewController<UITextFieldDelegate>
+@interface LoginViewController : UIViewController<UITextFieldDelegate, LoginDelegate>
 {
     UINavigationController *navController, *optionsNav;
     UITabBarController *tabController;

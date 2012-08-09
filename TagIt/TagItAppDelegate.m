@@ -7,6 +7,12 @@
 //
 
 #import "TagItAppDelegate.h"
+#import "LoginViewController.h"
+#import "SettingsSuperViewController.h"
+#import "OptionsViewController.h"
+#import "DataAdapters.h"
+
+#define isPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
 @implementation TagItAppDelegate
 
@@ -14,6 +20,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    if(isPad)
+    {
+        homeView = [[HomePageViewController alloc] initWithNibName:@"iPadHomePageViewController" bundle:nil];
+    }
+    else 
+    {
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque];
+        homeView = [[HomePageViewController alloc] init];
+    }
+    navControllerWithoutLogin = [[UINavigationController alloc] init];
+    [navControllerWithoutLogin pushViewController:homeView animated:NO];
+    [self.window addSubview:navControllerWithoutLogin.view];
+    
     // Override point for customization after application launch.
     [self.window makeKeyAndVisible];
     return YES;
@@ -56,10 +76,17 @@
      Save data if appropriate.
      See also applicationDidEnterBackground:.
      */
+    /*[DataAdapters clearLogin];
+     [DataAdapters clearQuestionList];
+     [DataAdapters clearQuestionDetail];*/
 }
+
 
 - (void)dealloc
 {
+    [navControllerWithoutLogin release];
+    [homeView release];
+    [tabController release];
     [_window release];
     [super dealloc];
 }

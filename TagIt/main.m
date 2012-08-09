@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UINavigationBar+CustomBackground.h"
+#import "objc/runtime.h"
 
 int main(int argc, char *argv[])
 {
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];    
     int retVal = UIApplicationMain(argc, argv, nil, nil);
     [pool release];
     return retVal;

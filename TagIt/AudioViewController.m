@@ -272,7 +272,10 @@
     qpController.delegate = self;
     [qpController processNextQuestion:[self audioRecordingPath]];
     
-    [self performSelectorOnMainThread:@selector(threadStop) withObject:nil waitUntilDone:NO];
+    if(qpController.done)
+    {
+        [self performSelectorOnMainThread:@selector(threadStop) withObject:nil waitUntilDone:NO];
+    }
     [qpController release];
     [pool release]; 
 }

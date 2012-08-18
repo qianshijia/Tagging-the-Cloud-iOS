@@ -114,6 +114,7 @@
 		FAC0CF3514AB16AB007BBA5D /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC0CF3314AB16AB007BBA5D /* HomePageViewController.m */; };
 		FAC0CF3614AB16AB007BBA5D /* HomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC0CF3414AB16AB007BBA5D /* HomePageViewController.xib */; };
 		FAD0815B15303B8800F540B3 /* UINavigationBar+CustomBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD0815A15303B8800F540B3 /* UINavigationBar+CustomBackground.m */; };
+		FAEAADF115DF47A30098AF7A /* UIView+UIViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEAADF015DF47A30098AF7A /* UIView+UIViewExtension.m */; };
 		FAF73AE7154A9994008B1CD2 /* iPadHomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF73ADA154A9994008B1CD2 /* iPadHomePageViewController.xib */; };
 		FAF73AE8154A9994008B1CD2 /* iPadLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF73ADB154A9994008B1CD2 /* iPadLoginViewController.xib */; };
 		FAF73AE9154A9994008B1CD2 /* iPadSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF73ADC154A9994008B1CD2 /* iPadSettingsViewController.xib */; };
@@ -318,6 +319,8 @@
 		FAC0CF3414AB16AB007BBA5D /* HomePageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageViewController.xib; sourceTree = "<group>"; };
 		FAD0815915303B8800F540B3 /* UINavigationBar+CustomBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+CustomBackground.h"; sourceTree = "<group>"; };
 		FAD0815A15303B8800F540B3 /* UINavigationBar+CustomBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+CustomBackground.m"; sourceTree = "<group>"; };
+		FAEAADEF15DF47A30098AF7A /* UIView+UIViewExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIViewExtension.h"; sourceTree = "<group>"; };
+		FAEAADF015DF47A30098AF7A /* UIView+UIViewExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIViewExtension.m"; sourceTree = "<group>"; };
 		FAF73ADA154A9994008B1CD2 /* iPadHomePageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iPadHomePageViewController.xib; sourceTree = "<group>"; };
 		FAF73ADB154A9994008B1CD2 /* iPadLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iPadLoginViewController.xib; sourceTree = "<group>"; };
 		FAF73ADC154A9994008B1CD2 /* iPadSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iPadSettingsViewController.xib; sourceTree = "<group>"; };
@@ -426,6 +429,8 @@
 				FA61E0B814D151220031F6E8 /* CustomTableCellForCheckBtn.m */,
 				FAD0815915303B8800F540B3 /* UINavigationBar+CustomBackground.h */,
 				FAD0815A15303B8800F540B3 /* UINavigationBar+CustomBackground.m */,
+				FAEAADEF15DF47A30098AF7A /* UIView+UIViewExtension.h */,
+				FAEAADF015DF47A30098AF7A /* UIView+UIViewExtension.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -930,6 +935,7 @@
 				FA0253F3153E8B19007615D0 /* ASIDownloadCache.m in Sources */,
 				FA0253F4153E8B19007615D0 /* ASIDataDecompressor.m in Sources */,
 				FA0253F5153E8B19007615D0 /* ASIDataCompressor.m in Sources */,
+				FAEAADF115DF47A30098AF7A /* UIView+UIViewExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

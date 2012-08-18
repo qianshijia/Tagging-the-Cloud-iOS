@@ -291,6 +291,7 @@
 								<string key="NSFrame">{{75, 186}, {170, 37}}</string>
 								<reference key="NSSuperview" ref="416827477"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>

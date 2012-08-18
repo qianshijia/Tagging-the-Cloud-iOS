@@ -108,11 +108,14 @@
 
 - (void)requestFinished:(ASIHTTPRequest *)request
 {
-    if([[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding].length > 200)
+    if([[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding].length > 500)
     {
         [delegate finishProcessWithError];
     }
-    done = YES;
+    else
+    {
+        done = YES;
+    }
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request

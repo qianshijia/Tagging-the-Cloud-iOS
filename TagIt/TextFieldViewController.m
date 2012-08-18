@@ -9,7 +9,6 @@
 #import "TextFieldViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "DataAdapters.h"
-#import "QuestionProcessingController.h"
 #import "TagitUtil.h"
 #import "MediaViewController.h"
 
@@ -249,7 +248,7 @@
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"[0-9]*"
                                                                            options:NSRegularExpressionCaseInsensitive
                                                                              error:nil];
-    NSUInteger *matches = [regex numberOfMatchesInString:answer options:0 range:NSMakeRange(0, answer.length)];
+    NSUInteger matches = [regex numberOfMatchesInString:answer options:0 range:NSMakeRange(0, answer.length)];
     if(matches > 0)
     {
         return YES;
@@ -265,7 +264,7 @@
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"(\\d{2})/(\\d{2})/(\\d{4})"
                                                                            options:NSRegularExpressionCaseInsensitive
                                                                              error:nil];
-    NSUInteger *matches = [regex numberOfMatchesInString:date options:0 range:NSMakeRange(0, date.length)];
+    NSUInteger matches = [regex numberOfMatchesInString:date options:0 range:NSMakeRange(0, date.length)];
     if(matches > 0)
     {
         return YES;
@@ -296,13 +295,14 @@
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     QuestionProcessingController *qpController = [[QuestionProcessingController alloc] init];
     qpController.currentView = @"textbox";
+    qpController.delegate = self;
     [qpController processNextQuestion:self.questionAnswer.text];
-    while(!qpController.done)
+
+    if(qpController.done)
     {
-        [NSThread sleepForTimeInterval:0.5];
+        [self performSelectorOnMainThread:@selector(threadStop) withObject:nil waitUntilDone:NO];
     }
     [qpController release];
-    [self performSelectorOnMainThread:@selector(threadStop) withObject:nil waitUntilDone:NO];
     [pool release];
 }
 
@@ -310,6 +310,22 @@
 {
     [processingIndicator dismissWithClickedButtonIndex:0 animated:YES];
     [TagitUtil startQuestion:self];
+}
+
+- (void)finishProcessWithError
+{
+    [processingIndicator dismissWithClickedButtonIndex:0 animated:YES];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Server error. Please try again later." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    [alert release];
+}
+
+-(void)processFail
+{
+    [processingIndicator dismissWithClickedButtonIndex:0 animated:YES];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Timeout. Please check your network connection." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    [alert release];
 }
 
 - (void)back
@@ -351,7 +367,6 @@
     [questionTitle release];
     [questionAnswer release];
     [reviewBtn release];
-   // [processingIndicator release];
     [super dealloc];
 }
 

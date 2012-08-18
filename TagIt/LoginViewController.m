@@ -252,9 +252,10 @@
         
         tabController = [[UITabBarController alloc] init];
         tabController.viewControllers = [NSArray arrayWithObjects:navController, optionsNav, sViewController, nil];
+        tabController.view.tag = 99;
         
         UIWindow *window = self.view.window;
-        [self.view removeFromSuperview];
+        [self.navigationController.view removeFromSuperview];
         [window addSubview:tabController.view];
         [sViewController release];
         [oViewController release];

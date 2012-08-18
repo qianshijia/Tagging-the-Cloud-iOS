@@ -121,11 +121,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "TagIt/TextFieldViewController.m"
-         timestampString = "357216844.708319"
+         timestampString = "366949584.828083"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "149"
-         endingLineNumber = "149"
+         startingLineNumber = "148"
+         endingLineNumber = "148"
          landmarkName = "-startNextQuestion:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -179,6 +179,19 @@
          startingLineNumber = "41"
          endingLineNumber = "41"
          landmarkName = "-processTag:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TagIt/TextFieldViewController.m"
+         timestampString = "366949584.828083"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "267"
+         endingLineNumber = "267"
+         landmarkName = "-dateValidation:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

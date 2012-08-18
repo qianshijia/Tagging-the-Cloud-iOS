@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QuestionProcessingController.h"
 
-@interface RadioViewController : UIViewController<UIPickerViewDelegate, UIAlertViewDelegate>
+@interface RadioViewController : UIViewController<UIPickerViewDelegate, UIAlertViewDelegate, QuestionProcessDelegate>
 {
     UILabel *questionTitle, *processName;
     UIPickerView *picker;

@@ -8,7 +8,6 @@
 
 #import "RadioViewController.h"
 #import "DataAdapters.h"
-#import "QuestionProcessingController.h"
 #import "TagitUtil.h"
 
 #define isPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
@@ -185,12 +184,14 @@
 {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     QuestionProcessingController *qpController = [[QuestionProcessingController alloc] init];
+    qpController.currentView = @"radio";
+    qpController.delegate = self;
     [qpController processNextQuestion:sendedValue];
-    while(!qpController.done)
+    
+    if(qpController.done)
     {
-        [NSThread sleepForTimeInterval:0.5];
+        [self performSelectorOnMainThread:@selector(threadStop) withObject:nil waitUntilDone:NO];
     }
-    [self performSelectorOnMainThread:@selector(threadStop) withObject:nil waitUntilDone:NO];
     [qpController release];
     [pool release];
 }
@@ -199,6 +200,22 @@
 {
     [processingIndicator dismissWithClickedButtonIndex:0 animated:YES];
     [TagitUtil startQuestion:self];
+}
+
+- (void)finishProcessWithError
+{
+    [processingIndicator dismissWithClickedButtonIndex:0 animated:YES];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Server error. Please try again later." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    [alert release];
+}
+
+-(void)processFail
+{
+    [processingIndicator dismissWithClickedButtonIndex:0 animated:YES];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Timeout. Please check your network connection." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    [alert release];
 }
 
 - (void)back

@@ -124,6 +124,7 @@
     {
         CustomWebViewController *webView = [[CustomWebViewController alloc] init];
         [self.navigationController pushViewController:webView animated:YES];
+        //[self presentModalViewController:webView animated:YES];
         [webView release];
         return;
     }
@@ -163,6 +164,7 @@
     {
         CustomWebViewController *webView = [[CustomWebViewController alloc] init];
         [self.navigationController pushViewController:webView animated:YES];
+        //[self presentModalViewController:webView animated:YES];
         [webView release];
     }
 }

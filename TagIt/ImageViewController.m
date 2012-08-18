@@ -179,7 +179,10 @@
     qpController.delegate = self;
     [qpController processNextQuestion:sendedImage];
 
-    [self performSelectorOnMainThread:@selector(threadStop) withObject:nil waitUntilDone:NO];
+    if(qpController.done)
+    {
+        [self performSelectorOnMainThread:@selector(threadStop) withObject:nil waitUntilDone:NO];
+    }
     [pool release];
     [qpController release];
 }

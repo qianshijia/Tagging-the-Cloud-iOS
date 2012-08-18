@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QuestionProcessingController.h"
 
-@interface TextFieldViewController : UIViewController<UITextViewDelegate>
+@interface TextFieldViewController : UIViewController<UITextViewDelegate, QuestionProcessDelegate>
 {
     UILabel *questionTitle, *processName;
     UITextView *questionAnswer;

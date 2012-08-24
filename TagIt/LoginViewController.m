@@ -11,7 +11,6 @@
 #import "SettingsSuperViewController.h"
 #import "OptionsViewController.h"
 
-#define isPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
 @implementation LoginViewController
 
@@ -253,6 +252,14 @@
         tabController = [[UITabBarController alloc] init];
         tabController.viewControllers = [NSArray arrayWithObjects:navController, optionsNav, sViewController, nil];
         tabController.view.tag = 99;
+        
+        CGContextRef context = UIGraphicsGetCurrentContext();  
+        [UIView beginAnimations:nil context:context];  
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+        [UIView setAnimationDuration:0.5];
+        [UIView setAnimationTransition: UIViewAnimationTransitionFlipFromRight forView:self.navigationController.view.superview cache:YES];
+        [UIView setAnimationDelegate:self];   
+        [UIView commitAnimations];
         
         UIWindow *window = self.view.window;
         [self.navigationController.view removeFromSuperview];

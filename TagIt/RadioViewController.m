@@ -10,7 +10,6 @@
 #import "DataAdapters.h"
 #import "TagitUtil.h"
 
-#define isPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
 @implementation RadioViewController
 

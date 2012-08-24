@@ -10,7 +10,6 @@
 #import "DataAdapters.h"
 #import "ASIHTTPRequest.h"
 #import "ASINetworkQueue.h"
-#import "TagitUtil.h"
 
 @implementation MediaViewController
 

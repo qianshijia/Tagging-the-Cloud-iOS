@@ -10,11 +10,9 @@
 #import "DataAdapters.h"
 #import "SuperQuestionListViewController.h"
 #import "TagProcessingController.h"
-#import "TagitUtil.h"
 #import "StartProcessController.h"
 #import "Question.h"
 
-#define isPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
 @implementation ThankYouViewController
 

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TagitUtil.h"
 
 @interface OptionsViewController : UIViewController
 {

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import "QuestionProcessingController.h"
+#import "TagitUtil.h"
 
 @interface VideoViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate, QuestionProcessDelegate>
 {

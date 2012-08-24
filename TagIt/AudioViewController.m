@@ -7,10 +7,8 @@
 //
 
 #import "AudioViewController.h"
-#import "TagitUtil.h"
 #import "DataAdapters.h"
 
-#define isPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
 @implementation AudioViewController
 

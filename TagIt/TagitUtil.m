@@ -22,8 +22,6 @@
 #import "AudioViewController.h"
 
 
-#define isPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-
 @implementation TagitUtil
 
 - (id)init

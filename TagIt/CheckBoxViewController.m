@@ -9,10 +9,8 @@
 #import "CheckBoxViewController.h"
 #import "DataAdapters.h"
 #import "CustomTableCellForCheckBtn.h"
-#import "TagitUtil.h"
 #import "QuestionProcessingController.h"
 
-#define isPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
 @implementation CheckBoxViewController
 

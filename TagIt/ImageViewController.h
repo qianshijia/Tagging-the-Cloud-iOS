@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "QuestionProcessingController.h"
+#import "TagitUtil.h"
 
 @interface ImageViewController : UIViewController <UIAlertViewDelegate, UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPopoverControllerDelegate, QuestionProcessDelegate>
 {

@@ -10,6 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <CoreAudio/CoreAudioTypes.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import "TagitUtil.h"
 
 @interface MediaViewController : UIViewController <AVAudioPlayerDelegate, UIAlertViewDelegate>
 {

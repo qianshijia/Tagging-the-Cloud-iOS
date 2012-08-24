@@ -11,13 +11,11 @@
 #import "OptionsViewController.h"
 #import "GPSPingServiceController.h"
 #import "DataAdapters.h"
-#import "TagitUtil.h"
 #import "CustomWebViewController.h"
 #import "SuperQuestionListViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "LoginViewController.h"
 
-#define isPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
 @implementation HomePageViewController
 
@@ -403,8 +401,17 @@ static BOOL stopPing;
             
             navControllerWithoutLogin = [[UINavigationController alloc] init];
             [navControllerWithoutLogin pushViewController:homeView animated:NO];
-            UIWindow *window = self.view.superview.window;
-            [self.view.superview removeFromSuperview];
+            
+            CGContextRef context = UIGraphicsGetCurrentContext();  
+            [UIView beginAnimations:nil context:context];  
+            [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+            [UIView setAnimationDuration:0.5];
+            [UIView setAnimationTransition: UIViewAnimationTransitionFlipFromLeft forView:self.navigationController.view.superview.superview.superview.superview cache:YES];
+            [UIView setAnimationDelegate:self];   
+            [UIView commitAnimations];
+            
+            UIWindow *window = self.view.window;
+            [self.navigationController.view.superview.superview.superview removeFromSuperview];
             [window addSubview:navControllerWithoutLogin.view];
         }
         

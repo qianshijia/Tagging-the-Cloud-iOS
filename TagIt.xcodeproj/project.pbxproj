@@ -65,7 +65,6 @@
 		FA4D3B2F14DD54C500162841 /* ThankYouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4D3B2D14DD54C500162841 /* ThankYouViewController.m */; };
 		FA4D3B3014DD54C500162841 /* ThankYouViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4D3B2E14DD54C500162841 /* ThankYouViewController.xib */; };
 		FA61E0B914D151220031F6E8 /* CustomTableCellForCheckBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = FA61E0B814D151220031F6E8 /* CustomTableCellForCheckBtn.m */; };
-		FA66520614AEA4AA00F8CA73 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA66520414AEA4AA00F8CA73 /* SettingsViewController.m */; };
 		FA67D55D14B6A1380020C1A5 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA67D55714B6A1380020C1A5 /* libzbar.a */; };
 		FA67D55E14B6A1380020C1A5 /* zbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = FA67D55914B6A1380020C1A5 /* zbar-back.png */; };
 		FA67D55F14B6A1380020C1A5 /* zbar-help.html in Resources */ = {isa = PBXBuildFile; fileRef = FA67D55A14B6A1380020C1A5 /* zbar-help.html */; };
@@ -240,8 +239,6 @@
 		FA4D3B2E14DD54C500162841 /* ThankYouViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThankYouViewController.xib; sourceTree = "<group>"; };
 		FA61E0B714D151220031F6E8 /* CustomTableCellForCheckBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableCellForCheckBtn.h; sourceTree = "<group>"; };
 		FA61E0B814D151220031F6E8 /* CustomTableCellForCheckBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableCellForCheckBtn.m; sourceTree = "<group>"; };
-		FA66520314AEA4AA00F8CA73 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		FA66520414AEA4AA00F8CA73 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		FA67D54314B6A1380020C1A5 /* Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decoder.h; sourceTree = "<group>"; };
 		FA67D54414B6A1380020C1A5 /* Exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
 		FA67D54514B6A1380020C1A5 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
@@ -597,8 +594,6 @@
 				FAC0CF3214AB16AB007BBA5D /* HomePageViewController.h */,
 				FAC0CF3314AB16AB007BBA5D /* HomePageViewController.m */,
 				FAC0CF3414AB16AB007BBA5D /* HomePageViewController.xib */,
-				FA66520314AEA4AA00F8CA73 /* SettingsViewController.h */,
-				FA66520414AEA4AA00F8CA73 /* SettingsViewController.m */,
 				FA246FCA14B314F0009DA8E4 /* CheckBoxViewController.h */,
 				FA246FCB14B314F0009DA8E4 /* CheckBoxViewController.m */,
 				FA246FCC14B314F0009DA8E4 /* CheckBoxViewController.xib */,
@@ -896,7 +891,6 @@
 				FAC0CF0A14AB14DA007BBA5D /* TagItAppDelegate.m in Sources */,
 				FAC0CF3014AB158B007BBA5D /* LoginViewController.m in Sources */,
 				FAC0CF3514AB16AB007BBA5D /* HomePageViewController.m in Sources */,
-				FA66520614AEA4AA00F8CA73 /* SettingsViewController.m in Sources */,
 				FA246F5B14AEF770009DA8E4 /* CustomSwitch.m in Sources */,
 				FA246F5F14B0155F009DA8E4 /* LoginInfo.m in Sources */,
 				FA246F6214B0179B009DA8E4 /* DataAdapters.m in Sources */,

@@ -9,10 +9,8 @@
 #import "TextFieldViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "DataAdapters.h"
-#import "TagitUtil.h"
 #import "MediaViewController.h"
 
-#define isPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
 @implementation TextFieldViewController
 

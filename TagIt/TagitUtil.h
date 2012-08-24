@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define isPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+
 @interface TagitUtil : NSObject
 
 + (NSString *)getTime;

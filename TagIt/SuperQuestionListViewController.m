@@ -12,7 +12,6 @@
 #import "TagitUtil.h"
 #import "DataAdapters.h"
 
-#define isPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
 @interface SuperQuestionListViewController ()
 

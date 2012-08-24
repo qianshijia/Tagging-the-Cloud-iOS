@@ -9,7 +9,6 @@
 #import "OptionsViewController.h"
 #import "CustomWebViewController.h"
 
-#define isPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
 @implementation OptionsViewController
 

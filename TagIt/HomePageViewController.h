@@ -11,6 +11,7 @@
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMessageComposeViewController.h>
 #import "TagProcessingController.h"
+#import "TagitUtil.h"
 
 @interface HomePageViewController : UIViewController <UIAlertViewDelegate, UINavigationControllerDelegate, ZBarReaderDelegate, MFMessageComposeViewControllerDelegate, TagProcessDelegate>
 {

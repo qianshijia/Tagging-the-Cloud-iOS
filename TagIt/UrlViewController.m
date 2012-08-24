@@ -9,10 +9,8 @@
 #import "UrlViewController.h"
 #import "DataAdapters.h"
 #import "QuestionProcessingController.h"
-#import "TagitUtil.h"
 #import "CustomWebViewController.h"
 
-#define isPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
 @implementation UrlViewController
 

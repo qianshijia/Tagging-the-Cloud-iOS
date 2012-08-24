@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "QuestionProcessingController.h"
+#import "TagitUtil.h"
 
 @interface TextFieldViewController : UIViewController<UITextViewDelegate, QuestionProcessDelegate>
 {

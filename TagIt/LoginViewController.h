@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HomePageViewController.h"
 #import "LoginController.h"
+#import "TagitUtil.h"
 
 
 @interface LoginViewController : UIViewController<UITextFieldDelegate, LoginDelegate>

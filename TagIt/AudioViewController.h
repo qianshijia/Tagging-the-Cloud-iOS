@@ -10,6 +10,8 @@
 #import <AVFoundation/AVFoundation.h>
 #import <CoreAudio/CoreAudioTypes.h>
 #import "QuestionProcessingController.h"
+#import "TagitUtil.h"
+
 
 @interface AudioViewController : UIViewController<AVAudioRecorderDelegate, AVAudioPlayerDelegate, UIAlertViewDelegate, QuestionProcessDelegate>
 {

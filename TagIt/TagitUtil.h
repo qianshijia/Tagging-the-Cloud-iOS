@@ -17,5 +17,6 @@
 + (UIColor *)getColor:(NSString *)hexColor;
 + (void)startQuestion:(UIViewController *)viewController;
 + (NSString *)getFilePath:(NSString *)fileName;
++ (void)playSound:(NSString *)fileName type:(NSString *)fileType;
 
 @end

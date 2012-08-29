@@ -85,6 +85,12 @@
         self.reviewBtn.hidden = NO;
     }
     
+    //add a GestureRecognizer, when tap the backgroud dismiss the keyboard.
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(backgroudTap)];
+    tapRecognizer.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:tapRecognizer];
+    [tapRecognizer release];
+    
     [super viewDidLoad];
 }
 
@@ -358,6 +364,11 @@
         return NO;  
     }  
     return YES;  
+}
+
+- (void)backgroudTap
+{
+    [questionAnswer resignFirstResponder];
 }
 
 - (void)dealloc

@@ -121,11 +121,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "TagIt/TextFieldViewController.m"
-         timestampString = "367503390.443401"
+         timestampString = "367572568.461799"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "146"
-         endingLineNumber = "146"
+         startingLineNumber = "152"
+         endingLineNumber = "152"
          landmarkName = "-startNextQuestion:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -147,11 +147,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TagIt/HomePageViewController.m"
-         timestampString = "367503390.443401"
+         timestampString = "367576476.114845"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "24"
-         endingLineNumber = "24"
+         startingLineNumber = "25"
+         endingLineNumber = "25"
          landmarkName = "navControllerWithoutLogin"
          landmarkType = "19">
       </FileBreakpoint>
@@ -186,11 +186,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TagIt/TextFieldViewController.m"
-         timestampString = "367503390.443401"
+         timestampString = "367572568.461799"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "265"
-         endingLineNumber = "265"
+         startingLineNumber = "271"
+         endingLineNumber = "271"
          landmarkName = "-dateValidation:"
          landmarkType = "5">
       </FileBreakpoint>

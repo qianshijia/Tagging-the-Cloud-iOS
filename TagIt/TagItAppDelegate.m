@@ -23,15 +23,15 @@
     
     if(isPad)
     {
-        homeView = [[HomePageViewController alloc] initWithNibName:@"iPadHomePageViewController" bundle:nil];
+        loginView = [[LoginViewController alloc] initWithNibName:@"iPadLoginViewController" bundle:nil];
     }
     else 
     {
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque];
-        homeView = [[HomePageViewController alloc] init];
+        loginView = [[LoginViewController alloc] init];
     }
     navControllerWithoutLogin = [[UINavigationController alloc] init];
-    [navControllerWithoutLogin pushViewController:homeView animated:NO];
+    [navControllerWithoutLogin pushViewController:loginView animated:NO];
     [self.window addSubview:navControllerWithoutLogin.view];
     
     // Override point for customization after application launch.
@@ -85,7 +85,7 @@
 - (void)dealloc
 {
     [navControllerWithoutLogin release];
-    [homeView release];
+    [loginView release];
     [tabController release];
     [_window release];
     [super dealloc];

@@ -5,6 +5,8 @@
 //  Created by Shijia Qian on 28/12/11.
 //  Copyright 2011 UTAS. All rights reserved.
 //
+#import <QuartzCore/QuartzCore.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 #import "HomePageViewController.h"
 #import "SettingsViewController.h"
@@ -13,7 +15,6 @@
 #import "DataAdapters.h"
 #import "CustomWebViewController.h"
 #import "SuperQuestionListViewController.h"
-#import <QuartzCore/QuartzCore.h>
 #import "LoginViewController.h"
 
 
@@ -53,17 +54,10 @@ static BOOL stopPing;
 - (void)viewDidLoad
 {    
 
-        [barCodeBtn setBackgroundImage:[UIImage imageNamed:@"btn_bg.png"] forState:UIControlStateNormal];
-        [barCodeBtn setBackgroundImage:[UIImage imageNamed:@"btnpressed_bg.png"] forState:UIControlStateHighlighted];
-        [qrTagBtn setBackgroundImage:[UIImage imageNamed:@"btn_bg.png"] forState:UIControlStateNormal];
-        [qrTagBtn setBackgroundImage:[UIImage imageNamed:@"btnpressed_bg.png"] forState:UIControlStateHighlighted];
-    
-    //set up the navigation bar
-    //    [self.navigationController.navigationBar setFrame:CGRectMake(0.0, 20.0, self.view.frame.size.width, 50.0)];
-    //    UIImageView *banner = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.frame.size.width, 50.0)];
-    //    banner.image = [UIImage imageNamed:@"banner.png"];
-    //    [self.navigationController.navigationBar insertSubview:banner aboveSubview:self.navigationController.view];
-    //    [banner release];
+    [barCodeBtn setBackgroundImage:[UIImage imageNamed:@"btn_bg.png"] forState:UIControlStateNormal];
+    [barCodeBtn setBackgroundImage:[UIImage imageNamed:@"btnpressed_bg.png"] forState:UIControlStateHighlighted];
+    [qrTagBtn setBackgroundImage:[UIImage imageNamed:@"btn_bg.png"] forState:UIControlStateNormal];
+    [qrTagBtn setBackgroundImage:[UIImage imageNamed:@"btnpressed_bg.png"] forState:UIControlStateHighlighted];
     
     if ([self.navigationController.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)])
     {
@@ -194,21 +188,6 @@ static BOOL stopPing;
     [alert release];
 }
 
-- (void)goToLogIn
-{
-    LoginViewController *loginView = nil;
-    if(!isPad)
-    {
-        loginView = [[LoginViewController alloc] init];
-    }
-    else 
-    {
-        loginView = [[LoginViewController alloc] initWithNibName:@"iPadLoginViewController" bundle:nil];
-    }
-    [self.navigationController pushViewController:loginView animated:YES];
-    [loginView release];
-}
-
 
 //*****Start GPS Ping***********
 - (void)startGPSPing
@@ -280,7 +259,7 @@ static BOOL stopPing;
     [scanner setSymbology: ZBAR_I25
                           config: ZBAR_CFG_ENABLE
                               to: 0];
-    reader.readerView.zoom = 1.0;  
+    reader.readerView.zoom = 1.0; 
     [self presentModalViewController: reader  
                             animated: YES];   
 }
@@ -288,7 +267,11 @@ static BOOL stopPing;
 //After scanning, get the content of the tag
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    [picker dismissModalViewControllerAnimated:NO];
+    if(!isPad)
+    {
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    }
+    [picker dismissModalViewControllerAnimated:YES];
     id<NSFastEnumeration> results =
     [info objectForKey: ZBarReaderControllerResults];
     
@@ -345,7 +328,6 @@ static BOOL stopPing;
         [[NSUserDefaults standardUserDefaults] setValue:tagCont forKey:@"loadUrl"];
         [self.navigationController pushViewController:webViewController animated:YES];
         [webViewController release];
-        //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:tagCont]];
     }
     else if([[tagCont lowercaseString] rangeOfString:@"tel"].location != NSNotFound)
     {
@@ -392,21 +374,21 @@ static BOOL stopPing;
             stopPing = YES;
             if(isPad)
             {
-                homeView = [[HomePageViewController alloc] initWithNibName:@"iPadHomePageViewController" bundle:nil];
+                loginView = [[LoginViewController alloc] initWithNibName:@"iPadLoginViewController" bundle:nil];
             }
             else 
             {
-                homeView = [[HomePageViewController alloc] init];
+                loginView = [[LoginViewController alloc] init];
             }
             
             navControllerWithoutLogin = [[UINavigationController alloc] init];
-            [navControllerWithoutLogin pushViewController:homeView animated:NO];
+            [navControllerWithoutLogin pushViewController:loginView animated:NO];
             
             CGContextRef context = UIGraphicsGetCurrentContext();  
             [UIView beginAnimations:nil context:context];  
             [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
             [UIView setAnimationDuration:0.5];
-            [UIView setAnimationTransition: UIViewAnimationTransitionFlipFromLeft forView:self.navigationController.view.superview.superview.superview.superview cache:YES];
+            [UIView setAnimationTransition: UIViewAnimationTransitionFlipFromLeft forView:self.view.window cache:YES];
             [UIView setAnimationDelegate:self];   
             [UIView commitAnimations];
             
@@ -565,7 +547,7 @@ static BOOL stopPing;
 
 - (void)dealloc
 {
-    [homeView release];
+    [loginView release];
     [navControllerWithoutLogin release];
     [processingAlert release];
     //[tagContent release];

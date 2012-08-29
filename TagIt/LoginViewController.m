@@ -18,7 +18,7 @@
 @synthesize passWord;
 @synthesize autoLoginSwitch;
 @synthesize scrollView;
-@synthesize backBtn;
+@synthesize loginButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,6 +37,7 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -52,9 +53,11 @@
         [[NSUserDefaults standardUserDefaults] setObject:@"0" forKey:@"enhancement"];
         [[NSUserDefaults standardUserDefaults] setObject:@"0" forKey:@"gps"];
     }
+    
     if([[[NSUserDefaults standardUserDefaults] stringForKey:@"autologin"] isEqualToString:@"0"])
     {
-        [self logIn:nil];
+        userName.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
+        passWord.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
     }
     
     [autoLoginSwitch setOn:[[[NSUserDefaults standardUserDefaults] stringForKey:@"autologin"] isEqualToString:@"0"] animated:NO];
@@ -72,12 +75,6 @@
     passWord.delegate = self;
     passWord.returnKeyType = UIReturnKeyDone;
     
-    //    [self.navigationController.navigationBar setFrame:CGRectMake(0.0, 20.0, self.view.frame.size.width, 50.0)];
-    //    UIImageView *banner = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.frame.size.width, 50.0)];
-    //    banner.image = [UIImage imageNamed:@"banner.png"];
-    //    [self.navigationController.navigationBar insertSubview:banner atIndex:1];
-    //    [banner release];
-    
     if ([self.navigationController.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)])
     {
         if(isPad)
@@ -90,26 +87,52 @@
         }
         
     }
+    
+    //button used to clear the textfield
     if(isPad)
     {
-        backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        backBtn.frame = CGRectMake(10, 20, 40.0, 40.0);
-        [backBtn setImage:[UIImage imageNamed:@"goback.png"] forState:UIControlStateNormal];
-        [backBtn addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
-    
-        [self.navigationController.navigationBar addSubview:backBtn];
-    }
-    else 
-    {
-        backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        backBtn.bounds = CGRectMake(0, 0, 30.0, 30.0);
-        [backBtn setImage:[UIImage imageNamed:@"goback.png"] forState:UIControlStateNormal];
-        [backBtn addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
+        UIButton *clearButton1 = [UIButton buttonWithType:UIButtonTypeCustom];
+        clearButton1.frame = CGRectMake(userName.frame.size.width - 32, 7.5, 30, 30);
+        clearButton1.tag = 1;
+        clearButton1.alpha = 0.7;
+        [clearButton1 setImage:[UIImage imageNamed:@"close.png"] forState:UIControlStateNormal];
+        [clearButton1 addTarget:self action:@selector(clearTextView:) forControlEvents:UIControlEventTouchUpInside];
+        [userName addSubview:clearButton1];
         
-        UIBarButtonItem *backBtnItem = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
-        self.navigationItem.leftBarButtonItem = backBtnItem;
-        [backBtnItem release];
+        UIButton *clearButton2 = [UIButton buttonWithType:UIButtonTypeCustom];
+        clearButton2.frame = CGRectMake(userName.frame.size.width - 32, 7.5, 30, 30);
+        clearButton2.tag = 2;
+        clearButton2.alpha = 0.7;
+        [clearButton2 setImage:[UIImage imageNamed:@"close.png"] forState:UIControlStateNormal];
+        [clearButton2 addTarget:self action:@selector(clearTextView:) forControlEvents:UIControlEventTouchUpInside];
+        [passWord addSubview:clearButton2];
     }
+    else
+    {
+        UIButton *clearButton1 = [UIButton buttonWithType:UIButtonTypeCustom];
+        clearButton1.frame = CGRectMake(userName.frame.size.width - 29, 2, 27, 27);
+        clearButton1.tag = 1;
+        clearButton1.alpha = 0.7;
+        [clearButton1 setImage:[UIImage imageNamed:@"close.png"] forState:UIControlStateNormal];
+        [clearButton1 addTarget:self action:@selector(clearTextView:) forControlEvents:UIControlEventTouchUpInside];
+        [userName addSubview:clearButton1];
+        
+        UIButton *clearButton2 = [UIButton buttonWithType:UIButtonTypeCustom];
+        clearButton2.frame = CGRectMake(userName.frame.size.width - 29, 2, 27, 27);
+        clearButton2.tag = 2;
+        clearButton2.alpha = 0.7;
+        [clearButton2 setImage:[UIImage imageNamed:@"close.png"] forState:UIControlStateNormal];
+        [clearButton2 addTarget:self action:@selector(clearTextView:) forControlEvents:UIControlEventTouchUpInside];
+        [passWord addSubview:clearButton2];
+        
+    }
+    
+    
+    //add a GestureRecognizer, when tap the backgroud dismiss the keyboard.
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(backgroudTap)];
+    tapRecognizer.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:tapRecognizer];
+    [tapRecognizer release];
     
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -117,10 +140,6 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    if(isPad)
-    {
-        [backBtn removeFromSuperview];
-    }
     [super viewWillDisappear:animated];
 }
 
@@ -136,6 +155,18 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)clearTextView:(id)sender
+{
+    if(((UIButton *)sender).tag == 1)
+    {
+        userName.text = @"";
+    }
+    else 
+    {
+        passWord.text = @"";
+    }
 }
 
 - (IBAction)logIn:(id)sender
@@ -169,7 +200,7 @@
     }
     else
     {
-        loadAlert = [[[UIAlertView alloc] initWithTitle:@"AutoLogin..."   
+        loadAlert = [[[UIAlertView alloc] initWithTitle:@"Login..."   
                                                 message:nil delegate:self cancelButtonTitle:nil otherButtonTitles: nil] autorelease];
         [loadAlert show];
         UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];  
@@ -257,7 +288,7 @@
         [UIView beginAnimations:nil context:context];  
         [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
         [UIView setAnimationDuration:0.5];
-        [UIView setAnimationTransition: UIViewAnimationTransitionFlipFromRight forView:self.navigationController.view.superview cache:YES];
+        [UIView setAnimationTransition: UIViewAnimationTransitionFlipFromRight forView:self.view.window cache:YES];
         [UIView setAnimationDelegate:self];   
         [UIView commitAnimations];
         
@@ -294,11 +325,11 @@
     return NO;
 }
 
-- (void)goBack
+/*- (void)goBack
 {
     [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:@"autologin"];
     [self.navigationController popViewControllerAnimated:YES];
-}
+}*/
 
 - (IBAction)setAutoLogin:(id)sender
 {
@@ -338,12 +369,18 @@
     [alert release];
 }
 
--(void)processFail
+- (void)processFail
 {
     [loadAlert dismissWithClickedButtonIndex:0 animated:YES];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Timeout. Please check your network connection." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
     [alert release];
+}
+
+- (void)backgroudTap
+{
+    [userName resignFirstResponder];
+    [passWord resignFirstResponder];
 }
 
 - (void)dealloc

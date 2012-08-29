@@ -13,9 +13,11 @@
 #import "TagProcessingController.h"
 #import "TagitUtil.h"
 
+@class LoginViewController;
+
 @interface HomePageViewController : UIViewController <UIAlertViewDelegate, UINavigationControllerDelegate, ZBarReaderDelegate, MFMessageComposeViewControllerDelegate, TagProcessDelegate>
 {
-    HomePageViewController *homeView;
+    LoginViewController *loginView;
     UINavigationController *navControllerWithoutLogin;
     UIButton *barCodeBtn, *qrTagBtn, *logInBtn;
     UIAlertView *processingAlert;

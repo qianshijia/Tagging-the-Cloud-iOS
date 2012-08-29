@@ -80,6 +80,8 @@
 		FA7BDBAF14D790B20022E543 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7BDBAE14D790B20022E543 /* SystemConfiguration.framework */; };
 		FA7BDBB114D790D40022E543 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7BDBB014D790D40022E543 /* MobileCoreServices.framework */; };
 		FA7BDBB314D790EF0022E543 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7BDBB214D790EF0022E543 /* libz.dylib */; };
+		FA7E819E15E8BE97002B9201 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA286B7014CA8A59000F9760 /* AudioToolbox.framework */; };
+		FA7E81CD15EDFC01002B9201 /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7E81CC15EDFC01002B9201 /* cross.png */; };
 		FA80BDC415620F2E0059E1B4 /* goback.png in Resources */ = {isa = PBXBuildFile; fileRef = FA80BDC315620F2E0059E1B4 /* goback.png */; };
 		FA80BDCC156225D00059E1B4 /* ipad_appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = FA80BDCB156225D00059E1B4 /* ipad_appicon.png */; };
 		FA80BDCE156226630059E1B4 /* appicon72.png in Resources */ = {isa = PBXBuildFile; fileRef = FA80BDCD156226620059E1B4 /* appicon72.png */; };
@@ -274,6 +276,7 @@
 		FA7BDBAE14D790B20022E543 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		FA7BDBB014D790D40022E543 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		FA7BDBB214D790EF0022E543 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		FA7E81CC15EDFC01002B9201 /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
 		FA80BDC315620F2E0059E1B4 /* goback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goback.png; sourceTree = "<group>"; };
 		FA80BDCB156225D00059E1B4 /* ipad_appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ipad_appicon.png; sourceTree = "<group>"; };
 		FA80BDCD156226620059E1B4 /* appicon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon72.png; sourceTree = "<group>"; };
@@ -345,6 +348,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA7E819E15E8BE97002B9201 /* AudioToolbox.framework in Frameworks */,
 				FAC0CEFE14AB14DA007BBA5D /* CoreGraphics.framework in Frameworks */,
 				FA7BDBB314D790EF0022E543 /* libz.dylib in Frameworks */,
 				FA7BDBB114D790D40022E543 /* MobileCoreServices.framework in Frameworks */,
@@ -556,9 +560,17 @@
 			name = ASIHttp;
 			sourceTree = "<group>";
 		};
+		FA7E819A15E8BA94002B9201 /* sound */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = sound;
+			sourceTree = "<group>";
+		};
 		FAAC719F14D3CE8600A84A11 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				FA7E81CC15EDFC01002B9201 /* cross.png */,
 				FA80BDD415637A2C0059E1B4 /* close.png */,
 				FA80BDC315620F2E0059E1B4 /* goback.png */,
 				FAF73AF4154A9A76008B1CD2 /* banner_ipad.png */,
@@ -674,6 +686,7 @@
 		FAC0CEFF14AB14DA007BBA5D /* TagIt */ = {
 			isa = PBXGroup;
 			children = (
+				FA7E819A15E8BA94002B9201 /* sound */,
 				FAF73AD8154A9985008B1CD2 /* iPad UI */,
 				FA3D6D8C1532894C00F64F32 /* iPad */,
 				FA7BDB8B14D790100022E543 /* ASIHttp */,
@@ -854,6 +867,7 @@
 				FA80BDCE156226630059E1B4 /* appicon72.png in Resources */,
 				FA80BDD515637A2C0059E1B4 /* close.png in Resources */,
 				FA6F570615CB748400FC3F98 /* Localizable.strings in Resources */,
+				FA7E81CD15EDFC01002B9201 /* cross.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -983,8 +997,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Shijia Qian (B2TR7Z2CR4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Shijia Qian (B2TR7Z2CR4)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -999,7 +1013,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "155D5EC6-BB53-4C2D-A134-3FF0042B83B1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "155D5EC6-BB53-4C2D-A134-3FF0042B83B1";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1009,8 +1024,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Shijia Qian (B2TR7Z2CR4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Shijia Qian (B2TR7Z2CR4)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
@@ -1019,7 +1034,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "155D5EC6-BB53-4C2D-A134-3FF0042B83B1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "155D5EC6-BB53-4C2D-A134-3FF0042B83B1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1028,7 +1044,8 @@
 		FAC0CF2814AB14DA007BBA5D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Shijia Qian (B2TR7Z2CR4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Shijia Qian (B2TR7Z2CR4)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TagIt/TagIt-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -1039,7 +1056,8 @@
 					"\"$(SRCROOT)/TagIt/ZBarSDK\"",
 				);
 				PRODUCT_NAME = "Tagging the Cloud";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "155D5EC6-BB53-4C2D-A134-3FF0042B83B1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "155D5EC6-BB53-4C2D-A134-3FF0042B83B1";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1048,7 +1066,8 @@
 		FAC0CF2914AB14DA007BBA5D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Shijia Qian (B2TR7Z2CR4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Shijia Qian (B2TR7Z2CR4)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TagIt/TagIt-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -1059,7 +1078,8 @@
 					"\"$(SRCROOT)/TagIt/ZBarSDK\"",
 				);
 				PRODUCT_NAME = "Tagging the Cloud";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "155D5EC6-BB53-4C2D-A134-3FF0042B83B1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "155D5EC6-BB53-4C2D-A134-3FF0042B83B1";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

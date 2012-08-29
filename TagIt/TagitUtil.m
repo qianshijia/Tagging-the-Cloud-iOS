@@ -8,6 +8,7 @@
 
 #import "TagitUtil.h"
 #import <CommonCrypto/CommonDigest.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 #import "DataAdapters.h"
 #import "TextFieldViewController.h"
@@ -73,6 +74,24 @@
 	[[NSScanner scannerWithString:[hexColor substringWithRange:range]] scanHexInt:&blue];
 	
 	return [UIColor colorWithRed:(float)(red/255.0f) green:(float)(green / 255.0f) blue:(float)(blue / 255.0f) alpha:1.0f];
+}
+
++ (void)playSound:(NSString *)fileName type:(NSString *)fileType
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:fileName ofType:fileType];
+    SystemSoundID soundEffect;
+    if([[NSFileManager defaultManager] fileExistsAtPath:path])
+    {
+        NSURL *fileURL = [NSURL fileURLWithPath:path];
+        AudioServicesCreateSystemSoundID((CFURLRef)fileURL, &soundEffect);
+        AudioServicesPlaySystemSound(soundEffect);
+    }
+    else
+    {
+        NSLog(@"error, audio file not found");
+    }
+    
+    AudioServicesDisposeSystemSoundID(soundEffect);
 }
 
 + (void)startQuestion:(UIViewController *)viewController

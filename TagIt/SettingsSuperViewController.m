@@ -10,6 +10,7 @@
 #import "CustomSwitch.h"
 #import "TagitUtil.h"
 #import "DataAdapters.h"
+#import "LoginViewController.h"
 
 
 @interface SettingsSuperViewController ()
@@ -41,7 +42,7 @@
 - (void)viewDidLoad
 {
     NSArray *arrTemp1 = [[NSArray alloc]
-                         initWithObjects:@"Auto Login", nil];
+                         initWithObjects:@"Remember Login Detail", nil];
     NSArray *arrTemp2 = [[NSArray alloc]
                          initWithObjects:@"Media Download", nil];
     NSArray *arrTemp3 = [[NSArray alloc]
@@ -109,7 +110,7 @@
     switch (section)
     {
         case 0:
-            return @"Auto Login";
+            return @"Remember username and password";
         case 1:
             return @"Download";
         case 2:
@@ -338,20 +339,30 @@
             [DataAdapters clearQuestionDetail];
             [DataAdapters clearQuestionList];
             
-            HomePageViewController *homeView = nil;
+            loginView = nil;
             if(isPad)
             {
-                homeView = [[HomePageViewController alloc] initWithNibName:@"iPadHomePageViewController" bundle:nil];
+                loginView = [[LoginViewController alloc] initWithNibName:@"iPadLoginViewController" bundle:nil];
             }
             else 
             {
-                homeView = [[HomePageViewController alloc] init];
+                loginView = [[LoginViewController alloc] init];
             }
+            
+            CGContextRef context = UIGraphicsGetCurrentContext();  
+            [UIView beginAnimations:nil context:context];  
+            [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+            [UIView setAnimationDuration:0.5];
+            [UIView setAnimationTransition: UIViewAnimationTransitionFlipFromLeft forView:self.view.window cache:NO];
+            [UIView setAnimationDelegate:self];   
+            [UIView commitAnimations];
+            
             UINavigationController *navControllerWithoutLogin = [[UINavigationController alloc] init];
-            [navControllerWithoutLogin pushViewController:homeView animated:NO];
-            UIWindow *window = self.view.superview.window;
-            [self.view.superview removeFromSuperview];
+            [navControllerWithoutLogin pushViewController:loginView animated:NO];
+            UIWindow *window = self.view.window;
+            [self.view.superview.superview.superview removeFromSuperview];
             [window addSubview:navControllerWithoutLogin.view];
+            [navControllerWithoutLogin release];
         }
     }
 }

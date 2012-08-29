@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "SettingsViewController.h"
-#import "HomePageViewController.h"
+
+@class LoginViewController;
 
 @interface SettingsSuperViewController : UIViewController
 {
@@ -16,6 +17,7 @@
     SettingsViewController *sView;
     NSDictionary *sectionContents;
     NSArray *sectionTitles;
+    LoginViewController *loginView;
 }
 
 @property (nonatomic, retain) NSDictionary *sectionContents;

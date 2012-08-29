@@ -22,14 +22,14 @@
     HomePageViewController *homeView;
     UISwitch *autoLoginSwitch;
     UIScrollView *scrollView;
-    UIButton *backBtn;
+    UIButton *loginBtn;
 }
 
 @property (nonatomic, retain) IBOutlet UITextField *userName;
 @property (nonatomic, retain) IBOutlet UITextField *passWord;
 @property (nonatomic, retain) IBOutlet UISwitch *autoLoginSwitch;
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, retain) UIButton *backBtn;
+@property (nonatomic, retain) IBOutlet UIButton *loginButton;
 
 
 -(IBAction)logIn:(id)sender;

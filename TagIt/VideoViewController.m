@@ -55,8 +55,7 @@
 - (void)viewDidLoad
 {
     [self.navigationItem setHidesBackButton:YES];
-    
-    
+
     questionTitle.text = [DataAdapters getQuestionDetail].questionLabel;
     processName.text = [DataAdapters getProcessName];
     

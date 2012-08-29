@@ -7,14 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LoginViewController.h"
-#import "HomePageViewController.h"
+@class LoginViewController;
 
 @interface TagItAppDelegate : NSObject <UIApplicationDelegate>
 {
     UINavigationController *navControllerWithoutLogin;
     UITabBarController *tabController;
-    HomePageViewController *homeView;
+    LoginViewController *loginView;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
